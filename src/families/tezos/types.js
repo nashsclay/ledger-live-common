@@ -27,6 +27,8 @@ export const tezosOperationTag = {
   OPERATION_TAG_DELEGATION: 10
 };
 
+export type TezosOperationMode = "send" | "delegate";
+
 export type TezosOperationTag = $Values<typeof tezosOperationTag>;
 
 declare class CoreTezosLikeAddress {
@@ -124,7 +126,7 @@ export type NetworkInfoRaw = {|
 export type Transaction = {|
   ...TransactionCommon,
   family: "tezos",
-  type: TezosOperationTag,
+  mode: TezosOperationMode,
   networkInfo: ?NetworkInfo,
   fees: ?BigNumber,
   gasLimit: ?BigNumber,
@@ -134,7 +136,7 @@ export type Transaction = {|
 export type TransactionRaw = {|
   ...TransactionCommonRaw,
   family: "tezos",
-  type: TezosOperationTag,
+  mode: TezosOperationMode,
   networkInfo: ?NetworkInfoRaw,
   fees: ?string,
   gasLimit: ?string,

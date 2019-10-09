@@ -780,6 +780,35 @@ const cryptocurrenciesById: { [name: string]: CryptoCurrency } = {
       }
     ]
   },
+  electra: {
+    type: "CryptoCurrency",
+    id: "electra",
+    coinType: 249,
+    name: "Electra",
+    managerAppName: "Electra",
+    ticker: "ECA",
+    scheme: "electra",
+    color: "#000000",
+    family: "bitcoin",
+    blockAvgTime: 64,
+    bitcoinLikeInfo: {
+      P2PKH: 33,
+      P2SH: 40
+    },
+    units: [
+      { 
+       name: "ECA",
+       code: "ECA",
+       magnitude: 8
+      }
+    ],
+    explorerViews: [
+      {
+        tx: "https://explorer.electraproject.org/tx/$hash",
+        address: "https://explorer.electraproject.org/address/$address"
+      }
+    ]
+  },
   ellaism: {
     type: "CryptoCurrency",
     id: "ellaism",
